@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Asset href="/CoxMediaGroup61/rest-1.v1/New/Story">
+  <Attribute name="Name" act="set">Create a New Asset</Attribute>
+  <Relation name="Scope" act="set">
+    <Asset href="/CoxMediaGroup61/rest-1.v1/Data/Scope/0" idref="Scope:0"/>
+  </Relation>
+</Asset>

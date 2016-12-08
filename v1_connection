@@ -1,0 +1,5 @@
+V1Connector connector = V1Connector
+    .withInstanceUrl("https://www3.v1host.com/CoxMediaGroup61")
+    .withUserAgentHeader("AppName", "1.0")
+    .withAccessToken("1.3oUG4h32Yu5FM7GcgWGxjYIHfcU=")
+    .build();

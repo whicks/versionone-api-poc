@@ -1,0 +1,31 @@
+#get the attributes from CMGt Deployment UserStory
+
+#Command to execute output to <somefile>
+curl --insecure -X GET  'https://www3.v1host.com/CoxMediaGroup61/rest-1.v1/Data/Story/291171' -H 'Authorization:Bearer 1.3oUG4h32Yu5FM7GcgWGxjYIHfcU='
+
+#get metadata from projects to fill in values
+curl --insecure -X GET  'https://www3.v1host.com/CoxMediaGroup61/rest-1.v1/Data/Story/<user_story_number>' -H 'Authorization:Bearer 1.3oUG4h32Yu5FM7GcgWGxjYIHfcU='
+
+#create a xml file <somefile.xml> Example
+<?xml version="1.0" encoding="UTF-8"?>
+<Asset href="/CoxMediaGroup61/rest-1.v1/New/Story">
+  <Attribute name="Name" act="set">Create a New Asset</Attribute>
+  <Relation name="Scope" act="set">
+    <Asset href="/CoxMediaGroup61/rest-1.v1/Data/Scope/0" idref="Scope:0"/>
+  </Relation>
+</Asset>
+
+
+#parse the output <somefile>
+add in element in <somefile.xml> associated with asset name, you can get assest name attributes pasting in browser
+https://www3.v1host.com/CoxMediaGroup61/rest-1.v1/Data/Story/<user_story_number>  
+
+
+#Command to create a new access in v1
+curl --insecure 'https://www3.v1host.com/CoxMediaGroup61/rest-1.v1/New/Story?ctx=Scope:0' -H 'Authorization:Bearer 1.3oUG4h32Yu5FM7GcgWGxjYIHfcU='
+#return
+
+#Command to  post the data to create new story
+curl --insecure -X POST -d @<somefile.xml> https://www3.v1host.com/CoxMediaGroup61/rest-1.v1/Data/Story --header "Content-Type:text/xml" -H 'Authorization:Bearer 1.3oUG4h32Yu5FM7GcgWGxjYIHfcU='
+
+
